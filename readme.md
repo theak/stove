@@ -1,5 +1,5 @@
 # Stove: Detect whether or not a light is on using openCV and optionally send values to Home Assistant
-Perfect for detecting whether or not a stove is on, or any other use case.
+Detect whether or not a certain colored light exists within a camera frame. E.g. if your stove has a light you can use this to detect the on state and send it to Home Assistant by mounting a camera above the light.
 
 ## First install requirements
 - pip3 install opencv-python hassapi [flask]
@@ -14,7 +14,7 @@ Perfect for detecting whether or not a stove is on, or any other use case.
   - Requires specifying "hasstoken" and "hassboolean" to toggle on state change
 - lower/upper: Lower/upper bounds for color of region to search for in image (B, G, R)
 - max_area: Max area of region to search for. Start by setting this arbitrarily high (e.g. 9999999) then narrowing down for your use case
-- min_max: Bounds to search within: [[min_x, min_y], [max_x, max_y]]. No need to specify- just use "python get_bounds.py" to autopopulate based on QR code location in the frame.
+- min_max: Bounds to search within: [[min_x, min_y], [max_x, max_y]]. No need to specify this in the config- just use "python get_bounds.py" to autopopulate based on QR code location in the frame.
 
 ## Then run "python get_bounds.py"
 Place a QR code within the frame and run "python get_bounds.py" to update config.json with the region to scan.
