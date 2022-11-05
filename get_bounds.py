@@ -2,12 +2,17 @@ import cv2, json
 
 import common
 
-def main():
+def get_bounds():
+	common.backup_config()
 	config = common.get_config()
 	image = common.get_image(config)
 
 	qr = cv2.QRCodeDetector()
 	_, points = qr.detectMulti(image)
+
+	if type(points) == type(None):
+		print("No QR code detected - returning")
+		return None
 
 	min_max = common.get_min_max(points)
 
@@ -20,5 +25,7 @@ def main():
 		with open("config.json", "w") as f:
 			f.write(outstr)
 			f.close()
+			return True
+	return None
 
-if __name__ == "__main__": main()
+if __name__ == "__main__": get_bounds()

@@ -7,7 +7,6 @@ import common
 DEBUG = False
 HASS = True
 
-
 hass = Hass(hassurl="http://192.168.0.155:8123/", token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiNDgxYzRiNzBlZTg0Nzc1ODZkYmFkOTA0ZDc0YTUzNyIsImlhdCI6MTY2NzE4NzgwMiwiZXhwIjoxOTgyNTQ3ODAyfQ.yUWsRTVJMS4wZmXAhTsHoKpcoTuuVM2n69j_qGSQT8k")
 
 def main():

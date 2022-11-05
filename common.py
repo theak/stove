@@ -1,7 +1,10 @@
-import cv2, json
+import cv2, json, shutil
+
+CONFIG = "config.json"
+CONFIG_BAK = "config_bak.json"
 
 def get_config():
-    f = open("config.json")
+    f = open(CONFIG)
     config = json.load(f)
     f.close()
     return config
@@ -14,6 +17,9 @@ def get_image(config):
     else:
         image = cv2.imread(config['file'])
     return image
+
+def backup_config():
+    shutil.copy(CONFIG, CONFIG_BAK)
 
 def get_min_max(boxes):
     mins = [10000, 10000]
