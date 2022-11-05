@@ -15,8 +15,8 @@ def off():
   save('off')
   return 'OK'
 
-@app.route('/get_bounds', methods=['GET'])
-def get_bounds():
+@app.route('/callibrate', methods=['GET'])
+def callibrate():
   success = get_bounds()
   return 'OK' if success else 'Failed to find QR code'
 
