@@ -1,4 +1,5 @@
 # Stove: Detect whether or not a light is on using openCV and optionally send values to Home Assistant
+Perfect for detecting whether or not a stove is on, or any other use case.
 
 ## First edit "config.json"
 - type: url or file 
