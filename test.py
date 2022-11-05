@@ -7,9 +7,6 @@ import common
 DIR = "img/"
 EXT = ".jpg"
 
-lower = numpy.array([1, 1, 180])
-upper = numpy.array([140, 140, 255])
-
 def main():
     config = common.get_config()
     lower, upper = (numpy.array(config['lower']), numpy.array(config['upper']))

@@ -28,3 +28,9 @@ Runs main.py in a loop. Perfect for running in a cronjob every minute. Eg:
 
 ## app.py
 Optional flask server for recording images and recallibrating QR code. "flask run" to start. Deploy w/ gunicorn and nginx.
+
+## save.py [on/off]
+Saves current image to img/ folder with on/off state prepended. Usage: "python save.py [on/off]"
+
+## test.py
+Runs detection on all of the saved images in the img/ folder.
