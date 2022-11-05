@@ -33,4 +33,4 @@ Optional flask server for recording images and recallibrating QR code. "flask ru
 Saves current image to img/ folder with on/off state prepended. Usage: "python save.py [on/off]"
 
 ## test.py
-Runs detection on all of the saved images in the img/ folder.
+Runs detection on all of the saved images in the img/ folder. Ideal for tweaking config values and getting them work reliably.
