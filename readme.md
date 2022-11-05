@@ -3,11 +3,11 @@ Perfect for detecting whether or not a stove is on, or any other use case.
 
 ## First edit "config.json"
 - type: url or file 
-  - Requires specifying either "url" or "file" field
+  - Requires specifying either "url" (stream URL- e.g. from an IP camera) or "file" (.jpg file path) field
 - debug: whether or not to preview image (set to false for headless)
-- hassurl: Optional Home Assistant URL
+- hassurl: Optional Home Assistant URL for updating values in Home Assistant
   - Requires specifying "hasstoken" and "hassboolean" to toggle on state change
-- lower/upper: Lower/upper bound for color of region to search for in image
+- lower/upper: Lower/upper bounds for color of region to search for in image (B, G, R)
 - max_area: Max area of region to search for
 
 ## Then run "python get_bounds.py"
