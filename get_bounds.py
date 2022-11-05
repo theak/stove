@@ -8,7 +8,7 @@ def get_bounds():
 	image = common.get_image(config)
 
 	qr = cv2.QRCodeDetector()
-	_, points = qr.detectMulti(image)
+	_, points = qr.detect(image)
 
 	if type(points) == type(None):
 		print("No QR code detected - returning")
