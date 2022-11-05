@@ -1,7 +1,5 @@
 import cv2, os, numpy
 
-from main import get_contours
-
 import common
 
 DIR = "img/"
@@ -16,7 +14,7 @@ def main():
         if not img.endswith(EXT): continue
         config["file"] = DIR + img
         image = common.get_image(config)
-        contours = get_contours(image, lower, upper, min_max, max_area)
+        contours = common.get_contours(image, lower, upper, min_max, max_area)
         success = len(contours) > 0 if img.startswith('on') else len(contours) == 0
         print(img, len(contours), success)
 

@@ -40,3 +40,9 @@ def range_filter(min_max, max_area):
         return (x > mins[0] and x < maxes[0] and y > mins[1] and y < maxes[1]) and (w * h < max_area)
     return out
 
+#Image, lower/upper BGR, ((min_x, min_y), (max_x, max_y)), max_area
+def get_contours(image, lower, upper, min_max, max_area):
+    mask = cv2.inRange(image, lower, upper)
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    return list(filter(range_filter(min_max, max_area), contours))
+
