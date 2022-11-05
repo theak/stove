@@ -21,4 +21,4 @@ Runs main.py in a loop. Perfect for running in a cronjob every minute. Eg:
     * 08-22 * * * cd [path_to_dir] && ./detect.sh
 
 ## app.py
-Flask server for recording images and recallibrating QR code. "flask run" to start. Deploy w/ gunicorn and nginx.
+Optional flask server for recording images and recallibrating QR code. "flask run" to start. Deploy w/ gunicorn and nginx.
