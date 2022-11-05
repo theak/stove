@@ -4,27 +4,32 @@ from hassapi import Hass
 
 import common
 
-DEBUG = False
-HASS = True
-
-hass = Hass(hassurl="http://192.168.0.155:8123/", token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiNDgxYzRiNzBlZTg0Nzc1ODZkYmFkOTA0ZDc0YTUzNyIsImlhdCI6MTY2NzE4NzgwMiwiZXhwIjoxOTgyNTQ3ODAyfQ.yUWsRTVJMS4wZmXAhTsHoKpcoTuuVM2n69j_qGSQT8k")
-
 def main():
     config = common.get_config()
     image = common.get_image(config)
     lower, upper = (numpy.array(config['lower']), numpy.array(config['upper']))
     min_max, max_area = (config['min_max'], config['max_area'])
+    debug = config['debug']
+
+    hass, hassurl, hasstoken, hassboolean = [None] * 4
+    if 'hassurl' in config:
+        hassurl, hasstoken, hassboolean = (config['hassurl'], config['hasstoken'], config['hassboolean'])
+        hass = Hass(hassurl=hassurl, token=hasstoken)
+
 
     contours = get_contours(image, lower, upper, min_max, max_area)
     cnt = len(contours)
     if cnt > 0:
-        print("%d contours" % cnt)
-        if DEBUG: cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
-        print("STOVE IS ON")
-        if HASS: hass.turn_on("input_boolean.kitchen_stove")
+        print("stove is ON:", "%d contours" % cnt)
+        if debug: cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
+        if hass: hass.turn_on(hassboolean)
     else:
         print("stove is off")
-        if HASS: hass.turn_off("input_boolean.kitchen_stove")
+        if hass: hass.turn_off(hassboolean)
+    
+    if debug:
+        cv2.imshow("image", image)
+        cv2.waitKey(0)
 
 #Image, lower/upper BGR, ((min_x, min_y), (max_x, max_y)), max_area
 def get_contours(image, lower, upper, min_max, max_area):

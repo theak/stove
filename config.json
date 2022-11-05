@@ -2,6 +2,10 @@
   "type": "url",
   "url": "http://192.168.0.101:8080/video",
   "file": "img/on1667609207.jpg",
+  "hassurl": "http://192.168.0.155:8123/",
+  "hasstoken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiNDgxYzRiNzBlZTg0Nzc1ODZkYmFkOTA0ZDc0YTUzNyIsImlhdCI6MTY2NzE4NzgwMiwiZXhwIjoxOTgyNTQ3ODAyfQ.yUWsRTVJMS4wZmXAhTsHoKpcoTuuVM2n69j_qGSQT8k",
+  "hassboolean": "input_boolean.kitchen_stove",
+  "debug": false,
   "lower": [
     1,
     1,
