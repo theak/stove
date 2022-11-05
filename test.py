@@ -5,6 +5,7 @@ from main import get_contours
 import common
 
 DIR = "img/"
+EXT = ".jpg"
 
 lower = numpy.array([1, 1, 180])
 upper = numpy.array([140, 140, 255])
@@ -15,6 +16,7 @@ def main():
     min_max, max_area = (config['min_max'], config['max_area'])
     config["type"] = "file"
     for img in os.listdir(DIR):
+        if not img.endswith(EXT): continue
         config["file"] = DIR + img
         image = common.get_image(config)
         contours = get_contours(image, lower, upper, min_max, max_area)
