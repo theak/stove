@@ -5,7 +5,8 @@
   "hassurl": "http://192.168.0.155:8123/",
   "hasstoken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiNDgxYzRiNzBlZTg0Nzc1ODZkYmFkOTA0ZDc0YTUzNyIsImlhdCI6MTY2NzE4NzgwMiwiZXhwIjoxOTgyNTQ3ODAyfQ.yUWsRTVJMS4wZmXAhTsHoKpcoTuuVM2n69j_qGSQT8k",
   "hassboolean": "input_boolean.kitchen_stove",
-  "num_frames": 2,
+  "num_on_frames": 4,
+  "num_off_frames": 8,
   "delay": 0.1,
   "debug": false,
   "lower": [
