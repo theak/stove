@@ -12,6 +12,8 @@ Detect whether or not a certain colored light exists within a camera frame. E.g.
 - debug: whether or not to preview image (set to false for headless)
 - hassurl: Optional Home Assistant URL for updating values in Home Assistant
   - Requires specifying "hasstoken" and "hassboolean" to toggle on state change
+  - "numframes" is the number of frames to verify before changing the state- higher number prevents fluctuations
+  - "delay" is how long to wait between each frame in seconds (decimals ok)
 - lower/upper: Lower/upper bounds for color of region to search for in image (B, G, R)
 - max_area: Max area of region to search for. Start by setting this arbitrarily high (e.g. 9999999) then narrowing down for your use case
 - min_max: Bounds to search within: [[min_x, min_y], [max_x, max_y]]. No need to specify this in the config- just use "python get_bounds.py" to autopopulate based on QR code location in the frame.
