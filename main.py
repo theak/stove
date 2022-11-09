@@ -28,7 +28,7 @@ def detect(frame=0):
             else:
                 print("stove is ON:", "%d contours" % cnt)
                 time.sleep(delay)
-                main(frame + 1) #Run again until num_frames to confirm change
+                detect(frame + 1) #Run again until num_frames to confirm change
     else:
         if hass and current_state == "on":
             if frame >= num_off_frames:
@@ -37,7 +37,7 @@ def detect(frame=0):
             else:
                 print("stove is off")
                 time.sleep(delay)
-                main(frame + 1)  #Run again until num_frames to confirm change
+                detect(frame + 1)  #Run again until num_frames to confirm change
     
     if debug:
         cv2.imshow("image", image)
