@@ -2,6 +2,7 @@ from flask import Flask, request, Response
 
 from save import save
 from get_bounds import get_bounds
+from configure_android_cam import configure
 
 app = Flask(__name__)
 
@@ -14,6 +15,11 @@ def on():
 def off():
   save('off')
   return 'OK'
+
+@app.route('/configure_cam', methods=['GET'])
+def configure_cam():
+  r = configure()
+  return 'OK' if r == 200 else ('Fail: %d' % r, 500)
 
 @app.route('/callibrate', methods=['GET'])
 def callibrate():
