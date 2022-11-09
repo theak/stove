@@ -33,7 +33,7 @@ def detect(frame=0):
         if hass and current_state == "on":
             if frame >= num_off_frames:
                 print("TURNING OFF")
-                print(hass.turn_off(hassboolean))
+                hass.turn_off(hassboolean)
             else:
                 print("stove is off")
                 time.sleep(delay)
