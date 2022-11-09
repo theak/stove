@@ -18,8 +18,8 @@ def off():
 
 @app.route('/configure_cam', methods=['GET'])
 def configure_cam():
-  r = configure()
-  return 'OK' if r == 200 else ('Fail: %d' % r, 500)
+  status_code = configure()
+  return 'OK' if status_code == 200 else ('Fail: %d' % r, 500)
 
 @app.route('/callibrate', methods=['GET'])
 def callibrate():
