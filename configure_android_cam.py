@@ -15,6 +15,8 @@ def configure():
 	if status_code == 200:
 		requests.get(URL + CROP_URL % ('x', CROP_X))
 		requests.get(URL + CROP_URL % ('y', CROP_Y))
+		requests.get(URL + "/settings/night_vision?set=on")
+		requests.get(URL + "/settings/night_vision_gain?set=0.75")
 	return status_code
 
 if __name__ == "__main__": print(configure())
