@@ -5,7 +5,7 @@ Update ZOOM, CROP_X, and CROP_Y to be the right values for your setup
 URL = "http://192.168.0.181:8080"
 ZOOM = 100
 CROP_X = 64 #/settings/crop_x?set=41
-CROP_Y = 52
+CROP_Y = 63
 CROP_URL = "/settings/crop_%s?set=%d"
 
 import requests
