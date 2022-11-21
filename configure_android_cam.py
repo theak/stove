@@ -16,7 +16,9 @@ def configure():
 		requests.get(URL + CROP_URL % ('x', CROP_X))
 		requests.get(URL + CROP_URL % ('y', CROP_Y))
 		requests.get(URL + "/settings/night_vision?set=on")
-		requests.get(URL + "/settings/night_vision_gain?set=0.75")
+		requests.get(URL + "/settings/night_vision_gain?set=0.50")
+		requests.get(URL + "/settings/focusmode?set=off")
+		requests.get(URL + "/settings/focus_distance?set=0.83")
 	return status_code
 
 if __name__ == "__main__": print(configure())
